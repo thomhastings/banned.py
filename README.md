@@ -5,7 +5,7 @@ a Python program to analyze C source code for banned vulnerable functions
 `python banned.py <input.c> <output.txt>`
 
 ## About
-There are a number of functions in C code that are known to be vulnerable to possible exploitation. This program helps find these functions to speed up code review. It will print out the line number, what function, and the affected line of code to stdout. It will also create an output file that includes the 2 lines of code before and after the affected line for some context.  
+There are a number of functions in C code that are known to be vulnerable to possible exploitation. This program helps find these functions to speed up code review. It will print out the line number, what function, and the affected line of code to stdout. It will also create an output file that includes the 2 lines of code before and after each affected line for some context.  
 The list of vulnerable functions comes from [git banned.h](https://github.com/git/git/blob/master/banned.h) and [microsoft banned.h](https://github.com/x509cert/banned/tree/master).
 
 ### Example
