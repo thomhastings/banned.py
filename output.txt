@@ -1,0 +1,408 @@
+Function 'strcpy' found at line 12:
+Affected line: strcpy(dest, "Hello");
+Context (2 lines before and after):
+    
+    // Unsafe string copy functions
+    strcpy(dest, "Hello");
+    strcat(dest, " World");
+
+
+
+--------------------------------------------------
+
+Function 'strcat' found at line 13:
+Affected line: strcat(dest, " World");
+Context (2 lines before and after):
+    // Unsafe string copy functions
+    strcpy(dest, "Hello");
+    strcat(dest, " World");
+
+    strncpy(dest, src, 10);
+
+
+--------------------------------------------------
+
+Function 'strncpy' found at line 15:
+Affected line: strncpy(dest, src, 10);
+Context (2 lines before and after):
+    strcat(dest, " World");
+
+    strncpy(dest, src, 10);
+    strncat(dest, src, 5);
+
+
+
+--------------------------------------------------
+
+Function 'strncpy' found at line 15:
+Affected line: strncpy(dest, src, 10);
+Context (2 lines before and after):
+    strcat(dest, " World");
+
+    strncpy(dest, src, 10);
+    strncat(dest, src, 5);
+
+
+
+--------------------------------------------------
+
+Function 'strncat' found at line 16:
+Affected line: strncat(dest, src, 5);
+Context (2 lines before and after):
+
+    strncpy(dest, src, 10);
+    strncat(dest, src, 5);
+
+    strcpyA(dest, src);
+
+
+--------------------------------------------------
+
+Function 'strncat' found at line 16:
+Affected line: strncat(dest, src, 5);
+Context (2 lines before and after):
+
+    strncpy(dest, src, 10);
+    strncat(dest, src, 5);
+
+    strcpyA(dest, src);
+
+
+--------------------------------------------------
+
+Function 'strcpyA' found at line 18:
+Affected line: strcpyA(dest, src);
+Context (2 lines before and after):
+    strncat(dest, src, 5);
+
+    strcpyA(dest, src);
+    strcatA(dest, src);
+    
+
+
+--------------------------------------------------
+
+Function 'strcatA' found at line 19:
+Affected line: strcatA(dest, src);
+Context (2 lines before and after):
+
+    strcpyA(dest, src);
+    strcatA(dest, src);
+    
+    _mbscpy(dest, src);
+
+
+--------------------------------------------------
+
+Function 'strcatA' found at line 19:
+Affected line: strcatA(dest, src);
+Context (2 lines before and after):
+
+    strcpyA(dest, src);
+    strcatA(dest, src);
+    
+    _mbscpy(dest, src);
+
+
+--------------------------------------------------
+
+Function '_mbscpy' found at line 21:
+Affected line: _mbscpy(dest, src);
+Context (2 lines before and after):
+    strcatA(dest, src);
+    
+    _mbscpy(dest, src);
+    _mbccpy(dest, src);
+    
+
+
+--------------------------------------------------
+
+Function '_mbscpy' found at line 21:
+Affected line: _mbscpy(dest, src);
+Context (2 lines before and after):
+    strcatA(dest, src);
+    
+    _mbscpy(dest, src);
+    _mbccpy(dest, src);
+    
+
+
+--------------------------------------------------
+
+Function '_mbccpy' found at line 22:
+Affected line: _mbccpy(dest, src);
+Context (2 lines before and after):
+    
+    _mbscpy(dest, src);
+    _mbccpy(dest, src);
+    
+    // Unsafe memory copy functions
+
+
+--------------------------------------------------
+
+Function '_mbccpy' found at line 22:
+Affected line: _mbccpy(dest, src);
+Context (2 lines before and after):
+    
+    _mbscpy(dest, src);
+    _mbccpy(dest, src);
+    
+    // Unsafe memory copy functions
+
+
+--------------------------------------------------
+
+Function 'memcpy' found at line 25:
+Affected line: memcpy(dest, src, 50);
+Context (2 lines before and after):
+    
+    // Unsafe memory copy functions
+    memcpy(dest, src, 50);
+    CopyMemory(dest, src, 50);
+    RtlCopyMemory(dest, src, 50);
+
+
+--------------------------------------------------
+
+Function 'memcpy' found at line 25:
+Affected line: memcpy(dest, src, 50);
+Context (2 lines before and after):
+    
+    // Unsafe memory copy functions
+    memcpy(dest, src, 50);
+    CopyMemory(dest, src, 50);
+    RtlCopyMemory(dest, src, 50);
+
+
+--------------------------------------------------
+
+Function 'CopyMemory' found at line 26:
+Affected line: CopyMemory(dest, src, 50);
+Context (2 lines before and after):
+    // Unsafe memory copy functions
+    memcpy(dest, src, 50);
+    CopyMemory(dest, src, 50);
+    RtlCopyMemory(dest, src, 50);
+
+
+
+--------------------------------------------------
+
+Function 'CopyMemory' found at line 26:
+Affected line: CopyMemory(dest, src, 50);
+Context (2 lines before and after):
+    // Unsafe memory copy functions
+    memcpy(dest, src, 50);
+    CopyMemory(dest, src, 50);
+    RtlCopyMemory(dest, src, 50);
+
+
+
+--------------------------------------------------
+
+Function 'RtlCopyMemory' found at line 27:
+Affected line: RtlCopyMemory(dest, src, 50);
+Context (2 lines before and after):
+    memcpy(dest, src, 50);
+    CopyMemory(dest, src, 50);
+    RtlCopyMemory(dest, src, 50);
+
+    // Dangerous pointer operations
+
+
+--------------------------------------------------
+
+Function 'RtlCopyMemory' found at line 27:
+Affected line: RtlCopyMemory(dest, src, 50);
+Context (2 lines before and after):
+    memcpy(dest, src, 50);
+    CopyMemory(dest, src, 50);
+    RtlCopyMemory(dest, src, 50);
+
+    // Dangerous pointer operations
+
+
+--------------------------------------------------
+
+Function 'IsBadWritePtr' found at line 30:
+Affected line: IsBadWritePtr(dest, 50);
+Context (2 lines before and after):
+
+    // Dangerous pointer operations
+    IsBadWritePtr(dest, 50);
+    IsBadReadPtr(src, 50);
+
+
+
+--------------------------------------------------
+
+Function 'IsBadWritePtr' found at line 30:
+Affected line: IsBadWritePtr(dest, 50);
+Context (2 lines before and after):
+
+    // Dangerous pointer operations
+    IsBadWritePtr(dest, 50);
+    IsBadReadPtr(src, 50);
+
+
+
+--------------------------------------------------
+
+Function 'IsBadReadPtr' found at line 31:
+Affected line: IsBadReadPtr(src, 50);
+Context (2 lines before and after):
+    // Dangerous pointer operations
+    IsBadWritePtr(dest, 50);
+    IsBadReadPtr(src, 50);
+
+    // Unsafe token parsing
+
+
+--------------------------------------------------
+
+Function 'IsBadReadPtr' found at line 31:
+Affected line: IsBadReadPtr(src, 50);
+Context (2 lines before and after):
+    // Dangerous pointer operations
+    IsBadWritePtr(dest, 50);
+    IsBadReadPtr(src, 50);
+
+    // Unsafe token parsing
+
+
+--------------------------------------------------
+
+Function 'strtok' found at line 34:
+Affected line: token = strtok(dest, " ");
+Context (2 lines before and after):
+
+    // Unsafe token parsing
+    token = strtok(dest, " ");
+    
+    // Dangerous file operations
+
+
+--------------------------------------------------
+
+Function 'strtok' found at line 34:
+Affected line: token = strtok(dest, " ");
+Context (2 lines before and after):
+
+    // Unsafe token parsing
+    token = strtok(dest, " ");
+    
+    // Dangerous file operations
+
+
+--------------------------------------------------
+
+Function 'gets' found at line 41:
+Affected line: gets(dest);
+Context (2 lines before and after):
+
+    // Unsafe I/O functions
+    gets(dest);
+    scanf("%s", dest);
+    
+
+
+--------------------------------------------------
+
+Function 'scanf' found at line 42:
+Affected line: scanf("%s", dest);
+Context (2 lines before and after):
+    // Unsafe I/O functions
+    gets(dest);
+    scanf("%s", dest);
+    
+    // Unsafe formatting functions
+
+
+--------------------------------------------------
+
+Function 'scanf' found at line 42:
+Affected line: scanf("%s", dest);
+Context (2 lines before and after):
+    // Unsafe I/O functions
+    gets(dest);
+    scanf("%s", dest);
+    
+    // Unsafe formatting functions
+
+
+--------------------------------------------------
+
+Function 'sprintf' found at line 45:
+Affected line: sprintf(dest, "Number: %d", 42);
+Context (2 lines before and after):
+    
+    // Unsafe formatting functions
+    sprintf(dest, "Number: %d", 42);
+    wsprintf(dest, L"Wide Number: %d", 42);
+
+
+
+--------------------------------------------------
+
+Function 'wsprintf' found at line 46:
+Affected line: wsprintf(dest, L"Wide Number: %d", 42);
+Context (2 lines before and after):
+    // Unsafe formatting functions
+    sprintf(dest, "Number: %d", 42);
+    wsprintf(dest, L"Wide Number: %d", 42);
+
+    // Unsafe path manipulation
+
+
+--------------------------------------------------
+
+Function '_splitpath' found at line 50:
+Affected line: _splitpath("C:\\path\\to\\file.txt", drive, dir, fname, ext);
+Context (2 lines before and after):
+    // Unsafe path manipulation
+    char drive[_MAX_DRIVE], dir[_MAX_DIR], fname[_MAX_FNAME], ext[_MAX_EXT];
+    _splitpath("C:\\path\\to\\file.txt", drive, dir, fname, ext);
+
+    // Unsafe memory allocation
+
+
+--------------------------------------------------
+
+Function '_splitpath' found at line 50:
+Affected line: _splitpath("C:\\path\\to\\file.txt", drive, dir, fname, ext);
+Context (2 lines before and after):
+    // Unsafe path manipulation
+    char drive[_MAX_DRIVE], dir[_MAX_DIR], fname[_MAX_FNAME], ext[_MAX_EXT];
+    _splitpath("C:\\path\\to\\file.txt", drive, dir, fname, ext);
+
+    // Unsafe memory allocation
+
+
+--------------------------------------------------
+
+Function 'alloca' found at line 53:
+Affected line: char *buffer = (char *)alloca(100);
+Context (2 lines before and after):
+
+    // Unsafe memory allocation
+    char *buffer = (char *)alloca(100);
+    
+    // Potentially risky system function
+
+
+--------------------------------------------------
+
+Function 'alloca' found at line 53:
+Affected line: char *buffer = (char *)alloca(100);
+Context (2 lines before and after):
+
+    // Unsafe memory allocation
+    char *buffer = (char *)alloca(100);
+    
+    // Potentially risky system function
+
+
+--------------------------------------------------
+
